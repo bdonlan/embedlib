@@ -42,7 +42,7 @@ END {
 my $prefix = "earc_";
 my $output = undef;
 my $header = "earc.h";
-my $template = rel2abs(".");
+my $template = ".";
 my $cc = 'gcc';
 my $ld = 'ld';
 my $align = 8;
@@ -85,6 +85,7 @@ if (!defined $output) {
 
 $output = rel2abs $output;
 $header = rel2abs $header;
+$template = rel2abs $template;
 
 my %fhash = map { ( (splitpath($_))[2], rel2abs $_ ) } @ARGV;
 my @files = sort keys %fhash;
